@@ -1,0 +1,33 @@
+package com.example.douanetemporelle;
+
+public class INTENTKEYS {
+    public static String nom(String matricule) {
+        return prefix(matricule) + "_NOM_VOYAGEUR";
+    }
+
+    public static String naissance(String matricule) {
+        return prefix(matricule) + "_ANNEE_NAISSANCE";
+    }
+
+    public static String destination(String matricule) {
+        return prefix(matricule) + "_ANNEE_DESTINATION";
+    }
+
+    public static String motif(String matricule) {
+        return prefix(matricule) + "_MOTIF";
+    }
+
+    public static String verdict(String matricule) {
+        return prefix(matricule) + "_VERDICT";
+    }
+
+    private static String prefix(String matricule) {
+        String chiffres = matricule.replaceAll("\\D", "");
+
+        if (chiffres.length() < 4) {
+            throw new IllegalArgumentException("Matricule invalide");
+        }
+
+        return chiffres.substring(chiffres.length() - 4);
+    }
+}
