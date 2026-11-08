@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:padding="10dp">
+
+    <!-- الجهة اليسرى للصورة -->
+    <ImageView
+        android:id="@+id/img_IB_passport"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:src="@android:drawable/ic_menu_compass"
+        android:scaleType="centerInside"
+        android:contentDescription="صورة جواز السفر"/>
+
+    <!-- الجهة اليمنى للمعلومات والأزرار -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/txt_IB_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PASSEPORT TEMPOREL"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/txt_IB_nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_IB_title"
+            android:layout_marginTop="30dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/txt_IB_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_IB_nom"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/txt_IB_motif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_IB_age"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_IB_approve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_IB_motif"
+            android:layout_marginTop="35dp"
+            android:text="Approuver le saut temporel"/>
+
+        <Button
+            android:id="@+id/btn_IB_refuse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_IB_approve"
+            android:layout_marginTop="15dp"
+            android:text="Refuser (Risque de paradoxe)"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
