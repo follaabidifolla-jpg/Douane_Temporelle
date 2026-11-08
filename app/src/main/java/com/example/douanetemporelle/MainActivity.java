@@ -83,9 +83,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         MainActivity.this,
                         VerificationActivity.class
+
                 );
 
-                // إرسال بيانات المسافر باستعمال المفاتيح المشتركة
+                //  nb3th l matriculr
                 intent.putExtra(
                         INTENTKEYS.nom(MATRICULE), nomVoyageur);
 
