@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResultActivity extends AppCompatActivity {
 
     // نفس رقم بطاقة الطالب المستعمل في بقية الأنشطة
-    private static final String MATRICULE = "12345678";
+    private static final String MATRICULE = "09655737";
 
     LinearLayout layout;
     TextView message;
