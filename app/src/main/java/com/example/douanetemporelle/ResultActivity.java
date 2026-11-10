@@ -55,6 +55,7 @@ public class ResultActivity extends AppCompatActivity {
             message.setText(
                     nom + " est en état d'arrestation temporelle."
             );
+
         }
 
         // narjou lel activite loula w nskrou lokhrin
