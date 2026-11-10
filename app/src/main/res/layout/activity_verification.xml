@@ -3,91 +3,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:gravity="center_vertical"
     android:weightSum="1"
-    android:padding="12dp"
-    android:background="#EAF0F6">
+    android:background="#173B65"
+    android:gravity="center_vertical"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/img_IB_passport"
         android:layout_width="0dp"
-        android:layout_height="280dp"
+        android:layout_height="489dp"
+        android:layout_gravity="center_vertical"
         android:layout_weight="0.3"
-        android:src="@drawable/passport"
-        android:scaleType="fitCenter"
-        android:background="#173B65"
-        android:padding="5dp"
-        android:contentDescription="Passeport temporel"/>
+        android:background="@drawable/bg_image_round"
+        android:clipToOutline="true"
+        android:contentDescription="صورة جواز السفر"
+        android:scaleType="centerCrop"
+        android:src="@drawable/passport" />
+
 
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="490dp"
         android:layout_weight="0.7"
-        android:layout_marginStart="6dp"
-        android:padding="12dp"
-        android:background="@drawable/bg_passport_page">
+        android:background="@drawable/bg_passport_page"
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/txt_IB_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PASSEPORT TEMPOREL"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#173B65"
             android:gravity="center"
-            android:padding="8dp"/>
+            android:text="PASSEPORT TEMPOREL"
+            android:textColor="#173B65"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_IB_nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_title"
-            android:layout_marginTop="20dp"
-            android:textSize="15sp"
-            android:textColor="#333F52"/>
+            android:layout_marginTop="30dp"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txt_IB_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_nom"
-            android:layout_marginTop="15dp"
-            android:textSize="15sp"
-            android:textColor="#333F52"/>
+            android:layout_marginTop="20dp"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txt_IB_motif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_age"
-            android:layout_marginTop="15dp"
-            android:textSize="15sp"
-            android:textColor="#333F52"/>
+            android:layout_marginTop="20dp"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_IB_approve"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_motif"
-            android:layout_marginTop="25dp"
-            android:text="Approuver le saut"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:layout_marginTop="35dp"
             android:backgroundTint="#173B65"
-            android:minHeight="48dp"/>
+            android:text="Approuver le saut temporel"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/btn_IB_refuse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_IB_approve"
-            android:layout_marginTop="12dp"
-            android:text="Refuser le saut"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#173B65"
+            android:text="Refuser (Risque de paradoxe)"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#A33D46"
-            android:minHeight="48dp"/>
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
 
