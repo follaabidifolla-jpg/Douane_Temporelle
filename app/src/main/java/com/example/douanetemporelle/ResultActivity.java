@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
-    // نفس رقم بطاقة الطالب المستعمل في بقية الأنشطة
+    // nafss matricule eli stamlneh f les activites lokhrin
     private static final String MATRICULE = "09655737";
 
     LinearLayout layout;
@@ -28,7 +28,7 @@ public class ResultActivity extends AppCompatActivity {
         message = findViewById(R.id.txt_YB_message);
         nouveau = findViewById(R.id.btn_YB_nouveau);
 
-        // استقبال القرار واسم المسافر
+        // est9bel 9arar w esm lmoseefrr
         Intent receivedIntent = getIntent();
 
         boolean verdict = receivedIntent.getBooleanExtra(
@@ -41,7 +41,7 @@ public class ResultActivity extends AppCompatActivity {
             nom = "Voyageur";
         }
 
-        // تغيير لون الشاشة حسب القرار
+        // tghir couleur selon decision
         if (verdict) {
 
             layout.setBackgroundColor(Color.parseColor("#2E7D32"));
@@ -57,7 +57,7 @@ public class ResultActivity extends AppCompatActivity {
             );
         }
 
-        // العودة إلى النشاط الأول مع غلق النشاطين السابقين
+        // narjou lel activite loula w nskrou lokhrin
         nouveau.setOnClickListener(v -> {
 
             Intent intent = new Intent(

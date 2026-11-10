@@ -1,77 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#173B65"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center">
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/txt_FB_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DOUANE TEMPORELLE"
+            android:textColor="#173B65"
             android:textSize="25sp"
             android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/txt_FB_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SERVICE DE CONTRÔLE DU TEMPS"
+            android:textColor="#B08D45"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="25dp"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_passport_page"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txt_FB_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FORMULAIRE DU VOYAGEUR"
+                android:textColor="#173B65"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="22dp"/>
+
+            <TextView
+                android:id="@+id/txt_FB_label_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom complet"
+                android:textColor="#333F52"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/edt_FB_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Entrez votre nom"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/txt_FB_label_naissance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Année de naissance"
+                android:textColor="#333F52"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/edt_FB_naissance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Exemple : 1990"
+                android:inputType="number"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/txt_FB_label_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Année de destination"
+                android:textColor="#333F52"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/edt_FB_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Exemple : 2050"
+                android:inputType="number"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/txt_FB_label_motif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Motif du voyage"
+                android:textColor="#333F52"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spn_FB_motif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_marginBottom="25dp"/>
+
+            <Button
+                android:id="@+id/btn_FB_inspecter"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="INSPECTER LE PROFIL"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:backgroundTint="#173B65"/>
+
+        </LinearLayout>
+
         <TextView
+            android:id="@+id/txt_FB_footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nom du voyageur"/>
-
-        <EditText
-            android:id="@+id/edt_FB_nom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Votre nom"
-            android:inputType="textPersonName"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Année de naissance"/>
-
-        <EditText
-            android:id="@+id/edt_FB_naissance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex: 1990"
-            android:inputType="number"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Année de destination"/>
-
-        <EditText
-            android:id="@+id/edt_FB_destination"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex: 2050"
-            android:inputType="number"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Motif du voyage"/>
-
-        <Spinner
-            android:id="@+id/spn_FB_motif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/btn_FB_inspecter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Inspecter le profil"
-            android:layout_marginTop="25dp"/>
+            android:text="DIRECTION GÉNÉRALE DES VOYAGES TEMPORELS"
+            android:textColor="#B08D45"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginTop="22dp"/>
 
     </LinearLayout>
 </ScrollView>
-

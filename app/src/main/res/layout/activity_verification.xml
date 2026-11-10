@@ -4,24 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="1"
-    android:background="#EAF0F6"
+    android:background="#173B65"
     android:gravity="center_vertical"
     android:padding="10dp">
 
     <!-- الجهة اليسرى للصورة -->
+    <!-- الجهة اليمنى للمعلومات والأزرار -->
+
     <ImageView
         android:id="@+id/img_IB_passport"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3"
-        android:src="@drawable/passport"
-        android:scaleType="centerCrop"
+        android:layout_height="489dp"
         android:layout_gravity="center_vertical"
-        android:contentDescription="صورة جواز السفر" />
-    <!-- الجهة اليمنى للمعلومات والأزرار -->
+        android:layout_weight="0.3"
+        android:background="@drawable/bg_image_round"
+        android:clipToOutline="true"
+        android:contentDescription="صورة جواز السفر"
+        android:scaleType="centerCrop"
+        android:src="@drawable/passport" />
+
+
     <RelativeLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="490dp"
         android:layout_weight="0.7"
         android:background="@drawable/bg_passport_page"
         android:padding="12dp">
@@ -30,11 +35,11 @@
             android:id="@+id/txt_IB_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="PASSEPORT TEMPOREL"
-            android:textStyle="bold"
             android:textColor="#173B65"
             android:textSize="20sp"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_IB_nom"
@@ -42,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_title"
             android:layout_marginTop="30dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txt_IB_age"
@@ -50,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_nom"
             android:layout_marginTop="20dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txt_IB_motif"
@@ -58,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_IB_age"
             android:layout_marginTop="20dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_IB_approve"
@@ -67,9 +72,9 @@
             android:layout_below="@id/txt_IB_motif"
             android:layout_marginTop="35dp"
             android:backgroundTint="#173B65"
-            android:textColor="#FFFFFF"
+            android:text="Approuver le saut temporel"
             android:textAllCaps="false"
-            android:text="Approuver le saut temporel"/>
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/btn_IB_refuse"
@@ -78,9 +83,9 @@
             android:layout_below="@id/btn_IB_approve"
             android:layout_marginTop="15dp"
             android:backgroundTint="#173B65"
-            android:textColor="#FFFFFF"
+            android:text="Refuser (Risque de paradoxe)"
             android:textAllCaps="false"
-            android:text="Refuser (Risque de paradoxe)"/>
+            android:textColor="#FFFFFF" />
 
     </RelativeLayout>
 
