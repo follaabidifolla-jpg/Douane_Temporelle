@@ -1,77 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:weightSum="1"
+    android:padding="12dp"
+    android:background="#EAF0F6">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/img_IB_passport"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:layout_weight="0.3"
+        android:src="@drawable/passport"
+        android:scaleType="fitCenter"
+        android:background="#173B65"
+        android:padding="5dp"
+        android:contentDescription="Passeport temporel"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center">
+        android:layout_weight="0.7"
+        android:layout_marginStart="6dp"
+        android:padding="12dp"
+        android:background="@drawable/bg_passport_page">
 
         <TextView
-            android:id="@+id/txt_FB_title"
-            android:layout_width="wrap_content"
+            android:id="@+id/txt_IB_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DOUANE TEMPORELLE"
-            android:textSize="25sp"
+            android:text="PASSEPORT TEMPOREL"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="25dp"/>
+            android:textColor="#173B65"
+            android:gravity="center"
+            android:padding="8dp"/>
 
         <TextView
+            android:id="@+id/txt_IB_nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nom du voyageur"/>
-
-        <EditText
-            android:id="@+id/edt_FB_nom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Votre nom"
-            android:inputType="textPersonName"/>
+            android:layout_below="@id/txt_IB_title"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:textColor="#333F52"/>
 
         <TextView
+            android:id="@+id/txt_IB_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Année de naissance"/>
-
-        <EditText
-            android:id="@+id/edt_FB_naissance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex: 1990"
-            android:inputType="number"/>
+            android:layout_below="@id/txt_IB_nom"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textColor="#333F52"/>
 
         <TextView
+            android:id="@+id/txt_IB_motif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Année de destination"/>
-
-        <EditText
-            android:id="@+id/edt_FB_destination"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex: 2050"
-            android:inputType="number"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Motif du voyage"/>
-
-        <Spinner
-            android:id="@+id/spn_FB_motif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_below="@id/txt_IB_age"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textColor="#333F52"/>
 
         <Button
-            android:id="@+id/btn_FB_inspecter"
+            android:id="@+id/btn_IB_approve"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inspecter le profil"
-            android:layout_marginTop="25dp"/>
+            android:layout_below="@id/txt_IB_motif"
+            android:layout_marginTop="25dp"
+            android:text="Approuver le saut"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#173B65"
+            android:minHeight="48dp"/>
 
-    </LinearLayout>
-</ScrollView>
+        <Button
+            android:id="@+id/btn_IB_refuse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_IB_approve"
+            android:layout_marginTop="12dp"
+            android:text="Refuser le saut"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#A33D46"
+            android:minHeight="48dp"/>
 
+    </RelativeLayout>
+
+</LinearLayout>
