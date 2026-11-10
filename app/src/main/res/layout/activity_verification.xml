@@ -8,9 +8,6 @@
     android:gravity="center_vertical"
     android:padding="10dp">
 
-    <!-- الجهة اليسرى للصورة -->
-    <!-- الجهة اليمنى للمعلومات والأزرار -->
-
     <ImageView
         android:id="@+id/img_IB_passport"
         android:layout_width="0dp"
