@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                         motif.getSelectedItem().toString());
 
                 startActivity(intent);
-
             } catch (NumberFormatException e) {
                 Toast.makeText(this,
                         "يرجى إدخال سنوات صحيحة",
