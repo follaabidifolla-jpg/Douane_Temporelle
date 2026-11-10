@@ -12,12 +12,12 @@
     <ImageView
         android:id="@+id/img_IB_passport"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3"
-        android:src="@drawable/passport"
-        android:scaleType="centerCrop"
+        android:layout_height="789dp"
         android:layout_gravity="center_vertical"
-        android:contentDescription="صورة جواز السفر" />
+        android:layout_weight="0.3"
+        android:contentDescription="صورة جواز السفر"
+        android:scaleType="centerCrop"
+        android:src="@drawable/passport" />
     <!-- الجهة اليمنى للمعلومات والأزرار -->
     <RelativeLayout
         android:layout_width="0dp"
