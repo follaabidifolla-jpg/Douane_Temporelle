@@ -10,7 +10,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     // رقم بطاقة الطالب المستعمل في جميع الأنشطة
