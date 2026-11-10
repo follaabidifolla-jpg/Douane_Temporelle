@@ -9,7 +9,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.dounanetemporelle"
+        applicationId = "com.example.douanetemporelle"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
