@@ -1,4 +1,5 @@
 
+
 package com.example.douanetemporelle;
 
 import android.content.Intent;
@@ -10,7 +11,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     // رقم بطاقة الطالب المستعمل في جميع الأنشطة
@@ -110,4 +110,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
