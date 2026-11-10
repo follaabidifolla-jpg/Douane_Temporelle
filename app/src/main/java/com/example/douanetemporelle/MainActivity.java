@@ -1,5 +1,4 @@
 
-
 package com.example.douanetemporelle;
 
 import android.content.Intent;
@@ -11,11 +10,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
 
-    // رقم بطاقة الطالب المستعمل في جميع الأنشطة
-    private static final String MATRICULE = "09655737";
+    // lezem nhotou ra9em bita9et ta3rif el taleb bech nesta3mlouh fi les activites lkol
 
+    private static final String MATRICULE = "09655737";
 
     EditText nom, naissance, destination;
     Spinner motif;
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         motif = findViewById(R.id.spn_FB_motif);
         inspecter = findViewById(R.id.btn_FB_inspecter);
 
-        // إنشاء قائمة أسباب السفر
+        // na3mlou liste feha asbeb essafar bech el utilisateur ye5tar menha
+
         String[] motifs = {
                 "Tourisme",
                 "Modification du passé",
@@ -53,11 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
         inspecter.setOnClickListener(v -> {
 
+            // nesta5rjou les informations eli ktebhom el utilisateur
+
             String nomVoyageur = nom.getText().toString().trim();
             String anneeN = naissance.getText().toString().trim();
             String anneeD = destination.getText().toString().trim();
 
-            // التثبت من أن جميع الخانات معمّرة
+            // net2akdou eli les 5anet lkol m3amrin
+
             if (nomVoyageur.isEmpty()
                     || anneeN.isEmpty()
                     || anneeD.isEmpty()) {
@@ -69,8 +73,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             try {
+                // n7awlou les annees men String l Integer
+
                 int anneeNaissance = Integer.parseInt(anneeN);
                 int anneeDestination = Integer.parseInt(anneeD);
+
+                // net2akdou eli les annees s7a7 w akther men 0
 
                 if (anneeNaissance <= 0 || anneeDestination <= 0) {
                     Toast.makeText(this,
@@ -79,14 +87,15 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                // إنشاء Intent صريح للانتقال إلى واجهة التثبت
+                // na3mlou Intent bech yna9elna lel VerificationActivity
+
                 Intent intent = new Intent(
                         MainActivity.this,
                         VerificationActivity.class
-
                 );
 
-                //  nb3th l matriculr
+                // nba3thou les informations mta3 el voyageur lel activity lokhra
+
                 intent.putExtra(
                         INTENTKEYS.nom(MATRICULE), nomVoyageur);
 
@@ -101,7 +110,11 @@ public class MainActivity extends AppCompatActivity {
                         motif.getSelectedItem().toString());
 
                 startActivity(intent);
+
             } catch (NumberFormatException e) {
+
+                // ken el utilisateur da5el 7aja moch ra9em ya3tih message d'erreur
+
                 Toast.makeText(this,
                         "يرجى إدخال سنوات صحيحة",
                         Toast.LENGTH_SHORT).show();
