@@ -1,4 +1,3 @@
-
 package com.example.douanetemporelle;
 
 import android.content.Intent;
@@ -10,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class VerificationActivity extends AppCompatActivity {
 
-    // نفس رقم بطاقة الطالب المستعمل في النشاط الأول
+    // Na3mlou declaration lel matricule eli nesta3mlouh fi les activites lkol
     private static final String MATRICULE = "09655737";
 
+    // Na3mlou declaration lel elements mta3 interface
     TextView txtNom, txtAge, txtMotif;
     Button approve, refuse;
 
@@ -21,6 +21,7 @@ public class VerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
 
+        // Norbto les variables m3a les elements eli mawjoudin fil XML
         txtNom = findViewById(R.id.txt_IB_nom);
         txtAge = findViewById(R.id.txt_IB_age);
         txtMotif = findViewById(R.id.txt_IB_motif);
@@ -28,9 +29,10 @@ public class VerificationActivity extends AppCompatActivity {
         approve = findViewById(R.id.btn_IB_approve);
         refuse = findViewById(R.id.btn_IB_refuse);
 
-        // استقبال البيانات من النشاط الأول
+        // Nesta9blou l'Intent eli jet mel MainActivity
         Intent receivedIntent = getIntent();
 
+        // Nesta5rjou les donnees eli b3athhom MainActivity
         String nom = receivedIntent.getStringExtra(
                 INTENTKEYS.nom(MATRICULE));
 
@@ -43,30 +45,31 @@ public class VerificationActivity extends AppCompatActivity {
         String motif = receivedIntent.getStringExtra(
                 INTENTKEYS.motif(MATRICULE));
 
-        // حساب الفرق بين سنة الوجهة وسنة الميلاد
+        // N7asbou el far9 bin 3am el wilada w 3am el destination
         int difference = Math.abs(destination - naissance);
 
-        // عرض المعلومات على جواز السفر
+        // Naffichiw les informations mta3 el voyageur
         txtNom.setText("Nom : " + nom);
         txtAge.setText("Age temporel : " + difference + " ans");
         txtMotif.setText("Motif : " + motif);
 
-        // تعطيل الموافقة عند وجود خطر المفارقة الزمنية
+        // Nethabtou ken el motif Modification du passé w el far9 nombre premier
         if ("Modification du passé".equals(motif)
                 && estPremier(difference)) {
 
+            // Ken fama risque temporel, na3mlou desactivation lel bouton Approve
             approve.setEnabled(false);
             approve.setText("Approbation impossible");
         }
 
-        // إرسال الموافقة
+        // Ki nenzelou 3la Approve, nb3thou decision positive
         approve.setOnClickListener(v -> envoyerVerdict(true, nom));
 
-        // إرسال الرفض
+        // Ki nenzelou 3la Refuse, nb3thou decision negative
         refuse.setOnClickListener(v -> envoyerVerdict(false, nom));
     }
 
-    // دالة للتثبت إذا كان العدد أوليا
+    // Fonction tetthabet ken el nombre premier wala le
     private boolean estPremier(int nombre) {
 
         if (nombre < 2) {
@@ -82,7 +85,7 @@ public class VerificationActivity extends AppCompatActivity {
         return true;
     }
 
-    // إرسال القرار واسم المسافر إلى النشاط الثالث
+    // Fonction teb3ath el decision w esm el voyageur lel ResultActivity
     private void envoyerVerdict(boolean verdict, String nom) {
 
         Intent intent = new Intent(
@@ -90,12 +93,14 @@ public class VerificationActivity extends AppCompatActivity {
                 ResultActivity.class
         );
 
+        // Neb3thou el verdict w esm el voyageur
         intent.putExtra(
                 INTENTKEYS.verdict(MATRICULE), verdict);
 
         intent.putExtra(
                 INTENTKEYS.nom(MATRICULE), nom);
 
+        // Nent9lou lel Activity ethletha
         startActivity(intent);
     }
 }
