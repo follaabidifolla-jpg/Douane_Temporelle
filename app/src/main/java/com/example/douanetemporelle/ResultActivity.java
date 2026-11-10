@@ -16,7 +16,7 @@ public class ResultActivity extends AppCompatActivity {
     private static final String MATRICULE = "09655737";
 
     LinearLayout layout;
-    TextView message;
+    TextView message;*
     Button nouveau;
 
     @Override
